@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="The home page for Hugo Ingelsson's person portfolio site!">
+        <link rel="icon" type="image/x-icon" href="./favicon/favicon-32x32.png">
+        <title>Hugo Ingelsson's Portfolio Site - Home</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <!-- 
+                    I'm imagining this will be in some kind of header bar up 
+                    top after applying CSS, so including a link to this page
+                    makes sense since this should stay the same across pages
+                -->
+                <details>
+                    <summary>Navigate my site!</summary>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./projects.html">Projects</a></li>
+                        <li><a href="./contact.html">Contact Me</a></li>
+                        <li><a href="./experiments.html">Experimental!?</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </header>
+        <main>
+            <h1><hello-world>Hello</hello-world>, welcome to my website!</h1>
+            <svg width="400px" height="200px">
+                <rect width="100%" height="100%" fill="#f8f8f8" />
+                <circle cx="200" cy="90" r="75" stroke="#000000" fill="yellow"></circle>
+                <circle cx="170" cy="70" r="7" stroke="#000000" fill="#000000"></circle>
+                <circle cx="230" cy="70" r="7" stroke="#000000" fill="#000000"></circle>
+                <path d="M 170 110 A 40 40 0 0 0 230 110" stroke="black" fill="none"/>
+            </svg>
+            <section>
+                <h2>Who am I?</h2>
+                <p>
+                    Hello, I'm Hugo! I'm a Computer Science + Applied Math double major 
+                    at the University of California, San Diego. I'm currently a junior and
+                    am slated to graduate Spring 2027.
+                </p>
+                <label for="graduation">Progress towards graduation:</label>
+                <progress id="graduation" max="100" value="60"></progress>
+                <p>
+                    This is a website I made to show off some cools things I've made. 
+                    I'd recommend going through the site in this order:
+                </p>
+                <ol>
+                    <li>Take a look at some <a href="./projects.html">projects</a> I've made</li>
+                    <li>Play around with this <a href="./experiments.html">experimental</a> page</li>
+                    <li>Get in <a href="./contact.html">touch</a> with me!</li>
+                </ol>
+            </section>
+
+            <noscript>
+                Woah, looks like you've got JavaScript turned off!
+                This page is actually purely HTML at the moment, so that's
+                fine, but it might be necessary to turn it on in the future.
+            </noscript>
+
+            <!-- Would likely be interactive when JS is added -->
+            <dialog>
+                <span id="dialog-settings">Settings</span>
+
+                <fieldset>
+                    <legend>Visual Features</legend>
+                    <div>
+                        <input type="checkbox" id="dark" name="dark">
+                        <label for="dark">Dark Mode</label>
+                    </div><br>
+                    <div>
+                        <label for="dark">Visual Fidelity</label><br>
+                        <input type="range" id="fidelity" name="fidelity" min="1" max="5" list="fidelity-markers">
+
+                        <datalist id="fidelity-markers">
+                            <option value="1" label="160p"></option>
+                            <option value="2" label="360p"></option>
+                            <option value="3" label="480p"></option>
+                            <option value="4" label="720p"></option>
+                            <option value="5" label="1080p"></option>
+                        </datalist>
+                    </div>
+                </fieldset>
+            </dialog>
+        </main>
+        <footer>
+            <small>
+                Thanks for visiting my site! 
+                If you'd like to get in contact, click <a href="./contact.html">here</a>.
+            </small>
+        </footer>
+
+        <script>
+            const helloWorld = document.querySelectorAll("hello-world");
+            helloWorld.forEach(() => {
+                console.log("hello world");
+            })
+        </script>
+    </body>
+</html>

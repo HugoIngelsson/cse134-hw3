@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A place where people can contact me">
+        <link rel="icon" type="image/x-icon" href="./favicon/favicon-32x32.png">
+        <title>Hugo Ingelsson's Portfolio Site - Contact Me</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <!-- 
+                    I'm imagining this will be in some kind of header bar up 
+                    top after applying CSS, so including a link to this page
+                    makes sense since this should stay the same across pages
+                -->
+                <details>
+                    <summary>Navigate my site!</summary>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./projects.html">Projects</a></li>
+                        <li><a href="./contact.html">Contact Me</a></li>
+                        <li><a href="./experiments.html">Experimental!?</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </header>
+        <main>
+            <h1>Contact me</h1>
+            <p>
+                I'd love to get in contact with you! Please fill in the form 
+                below and I'll send you a message!
+            </p>
+            <hr>
+            <form action="form-submit.html" method="GET">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <fieldset>
+                    <legend>Why do you want to get in contact?</legend>
+
+                    <input type="radio" id="school" name="reason" value="school" checked required>
+                    <label for="school">School related</label><br>
+
+                    <input type="radio" id="cool" name="reason" value="cool">
+                    <label for="cool">There's something cool I want to show you</label><br>
+
+                    <input type="radio" id="know" name="reason" value="know">
+                    <label for="know">I just wanna get to know you</label><br>
+
+                    <input type="radio" id="other" name="reason" value="other">
+                    <label for="other">Other (please specify below)</label>
+                </fieldset>
+
+                <label for="free-response">Anything else?</label><br>
+                <textarea id="free-response" name="free-response"></textarea><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>

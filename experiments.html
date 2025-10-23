@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="An experimental page to try out random HTML elements">
+        <link rel="icon" type="image/x-icon" href="./favicon/favicon-32x32.png">
+        <title>Hugo Ingelsson's Portfolio Site - Experimental</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <!-- 
+                    I'm imagining this will be in some kind of header bar up 
+                    top after applying CSS, so including a link to this page
+                    makes sense since this should stay the same across pages
+                -->
+                <details>
+                    <summary>Navigate my site!</summary>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./projects.html">Projects</a></li>
+                        <li><a href="./contact.html">Contact Me</a></li>
+                        <li><a href="./experiments.html">Experimental!?</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </header>
+        <main>
+            <h1>Experiments</h1>
+            <p>
+                This is a <i>~wacky~</i> site on my page where I'll be experimenting with some 
+                HTML elements that didn't fit in anywhere else on the page.
+            </p>
+
+            <section>
+                <h2>Audio</h2>
+                <audio controls>
+                    <source src="./audio/theelevatorbossanova.mp3" type="audio/mpeg">
+                    <source src="./audio/theelevatorbossanova.ogg" type="audio/ogg">
+                    <p>
+                        It seems your browser can't play this kind of file! You can download it as an
+                        <a href="./audio/theelevatorbossanova.mp3" download="theelevatorbossanova.mp3">MP3</a> 
+                        or an
+                        <a href="./audio/theelevatorbossanova.ogg" download="theelevatorbossanova.ogg">OGG</a> 
+                        file!
+                    </p>
+                </audio>
+                <p>
+                    Play some sweet elevator music, or download it if your browser doesn't support
+                    direct audio playback.
+                </p>
+            </section>
+
+            <section>
+                <h2>Picture</h2>
+                <picture>
+                    <source srcset="./img/jpg/dog.jpg"
+                        media="(width >= 850px)">
+                    <img src="./img/jpg/cat.jpg" alt="What animal is this? Depending on the screen width, it might be either a cat or a dog!" 
+                            height="500">
+                </picture>
+                <p>
+                    The picture above changes depending on the width of your window! 
+                    Try playing around with your window size a bit.
+                </p>
+            </section>
+
+            <section>
+                <h2>Video</h2>
+                <video controls width="400" loop>
+                    <source src="./video/2491284-uhd_4096_2160_24fps.mp4">
+                    <p>
+                        Looks like your browser can't play this file! Download it as an
+                        <a href="./video/2491284-uhd_4096_2160_24fps.mp4" download="rain.mp4">MP4</a>
+                        file.
+                    </p>
+                </video>
+                <p>Some nice and calm imagery of rain.</p>
+            </section>
+
+            <section>
+                <h2>Canvas</h2>
+                <canvas id="abstract-art" width="400" height="400"></canvas>
+                <p>
+                    The above image is randomly generated when you load this
+                    page! Try reloading and see how it changes.
+                </p>
+                <script>
+                    const canvas = document.getElementById('abstract-art');
+                    const ctx = canvas.getContext('2d');
+                    
+                    for (var i = 0; i < 25; i++) {
+                        const x1 = Math.random() * ctx.canvas.width;
+                        const y1 = Math.random() * ctx.canvas.height;
+                        const x2 = Math.random() * ctx.canvas.width;
+                        const y2 = Math.random() * ctx.canvas.height;
+
+                        ctx.strokeStyle = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase()}`;
+                        ctx.beginPath();
+                        ctx.moveTo(x1, y1);
+                        ctx.lineTo(x2, y2);
+                        ctx.stroke();
+                    }
+                </script>
+            </section>
+
+            <section>
+                <h2>Template</h2>
+                <table id="class-schedule">
+                    <thead>
+                        <tr>
+                            <td>Class Code</td>
+                            <td>Subject</td>
+                            <td>Days of Week</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <p>
+                    We can't actually write any JS yet to fill in the table above,
+                    but using the template I've placed in this section would make
+                    it easier to do so once we can.
+                </p>
+
+                <template id="class-row">
+                    <tr>
+                        <td class="class-code"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </template>
+            </section>
+
+            <section>
+                <h2>MathML</h2>
+                <p>
+                    Look, it's Euler's formula!
+                    <math>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mi>m</mi>
+                        <msup>
+                            <mi>c</mi>
+                            <mn>2</mn>
+                        </msup>
+                    </math>
+                </p>
+            </section>
+        </main>
+        <footer>
+            <small>
+                Thanks for visiting my site! 
+                If you'd like to get in contact, click <a href="./contact.html">here</a>.
+            </small>
+        </footer>
+    </body>
+</html>
